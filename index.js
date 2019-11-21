@@ -127,7 +127,7 @@ class googleDrive {
       console.log(parent);
       let url = 'https://www.googleapis.com/drive/v3/files';
       let params = {'includeItemsFromAllDrives':true,'supportsAllDrives':true};
-      params.q = `'${parent}' in parents and name = '${name}' andtrashed = false`;
+      params.q = `'${parent}' in parents and name = '${name}' and trashed = false`;
       params.fields = "files(id, name, mimeType, size ,createdTime, modifiedTime, iconLink, thumbnailLink)";
       url += '?'+this.enQuery(params);
       let requestOption = await this.requestOption();
